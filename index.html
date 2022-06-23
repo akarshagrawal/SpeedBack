@@ -2,14 +2,9 @@
 <html lang="en">
 
 <head>
-    <title>TW SpeedBack Tool</title>
+    <title>1 to 1 Feedback</title>
     <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
-    <style>
-        .container {
-            margin: 0 auto;
-            width: 600px
-        }
-    </style>
+    <link rel="stylesheet" href="./app.css">
 </head>
 
 <body ng-app="FixtureApp" ng-cloak>
@@ -19,7 +14,7 @@
         <md-content class="md-padding" layout="column">
 
             <h2 class="md-title">Add a person</h2>
-            <md-chips ng-model="names"></md-chips>
+            <md-chips ng-model="names" class="person"></md-chips>
             <br>
 
             <div layout="row" layout-xs="column">
@@ -36,15 +31,28 @@
             </div>
 
             <br>
-            <div ng-repeat="rounds in combos">
+            <div ng-repeat="rounds in combos" class="round">
                 <strong>Round {{$index+1}}</strong>
+                <div class="timer">
+                    <div id="countdown-{{$index+1}}" class="countdown">
+                        <div id="countdown-number" class="countdown-number">
+                            <span id='min-{{$index+1}}'>00</span>
+                        </div>
+                        <span id='sec-{{$index+1}}' class="seconds">00</span>
+                        <svg>
+                            <circle r="18" cx="20" cy="20"></circle>
+                        </svg>
+                    </div>
+                    <div class="buttons">
+                        <div id="start-{{$index+1}}" data-element-id="{{$index+1}}" onclick='start(this)' class="button start">Start</div>
+                        <div id="reset-{{$index+1}}" data-element-id="{{$index+1}}" onclick='reset(this)' class="button reset disabled">Reset</div>
+                    </div>
+                </div>
                 <div ng-repeat="pair in rounds">
                     <span>{{ pair[0] + ' -' }}</span>
                     <span>{{ pair[1] || '(Timekeeper)' }}</span>
                 </div>
-                <span ng-if="!$last"><hr></span>
             </div>
-
         </md-content>
 
     </div>
