@@ -1,7 +1,4 @@
-# RoundRobinScheduling
+# SpeedBack Scheduler for TW
 
-```
-python -m SimpleHTTPServer 8000
-```
 
-https://raghavcreddy.github.io/RoundRobinTournament/
+https://akarshagrawal.github.io/SpeedBack/
