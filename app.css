@@ -1,0 +1,107 @@
+.container {
+    margin: 0 auto;
+    width: 600px
+}
+
+.round {
+    margin: 10px;
+    border-bottom: 2px solid darkgray;
+    padding: 10px 5px;
+}
+
+.person {
+    border: 5px solid #9a95ec;
+    border-radius: 9px;
+    border-style: groove;
+}
+
+.md-chip {
+    background-color: lavender !important;
+}
+
+.button {
+    display: inline-block;
+    border: 1px solid #CCC;
+    box-shadow: 0 0 5px -1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    vertical-align: middle;
+    max-width: 100px;
+    padding: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.start {
+    background-color: lightgreen;
+}
+
+.reset {
+    background-color: lightpink;
+}
+
+.disabled {
+    cursor: not-allowed;
+    background-color: #abbfbe;
+}
+
+.timer {
+    float: right;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    height: 85px;
+    width: 110px;
+    align-items: center;
+    margin-right: 25px;
+}
+
+.countdown {
+    position: relative;
+    float: right;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    margin: 2px;
+}
+
+.countdown-number {
+    color: #333;
+    display: inline-block;
+    line-height: 40px;
+}
+
+.countdown svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+.seconds {
+    position: absolute;
+    margin: -10px 10px;
+}
+
+svg circle {
+    stroke-dasharray: 113px;
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 2px;
+    stroke: #333;
+    fill: none;
+}
+
+.animate-timer {
+    animation: countdown linear 60s infinite forwards;
+}
+
+@keyframes countdown {
+    from {
+        stroke-dashoffset: 0px;
+    }
+    to {
+        stroke-dashoffset: 113px;
+    }
+}
